@@ -11,6 +11,6 @@ define('URL_ROOT', '/Personal%20Projects/CV');
 define('DB_DRIVER', 'mysql');
 define('DB_CHARSET', 'utf8mb4');
 define('DB_HOST', 'localhost');
-define('DB_NAME', 'reserve_db');
+define('DB_NAME', 'cv');
 define('DB_USER', 'root');
 define('DB_PASS', '');

@@ -1,0 +1,52 @@
+
+        .wrapper {
+            width: 2000px; /* Set the width of the wrapper */
+            height: 800px; /* Set the height of the wrapper */
+            padding: 0; /* Remove padding */
+            box-sizing: border-box; /* Ensure padding and border are included in the element's total width and height */
+            position: relative; /* Enable positioning for the inner image */
+            overflow: hidden; /* Hide overflow to ensure image doesn't go outside the borders */
+            border-radius: 5px;
+        }
+        
+        .image {
+            width: 100%; /* Make image take full width of wrapper */
+            height: auto; /* Maintain the aspect ratio of the image */
+            object-fit: cover; /* Ensure the image covers the entire div without stretching */
+            position: absolute; /* Position the image absolutely within the wrapper */
+            top: -600px; /* Move the image down by 20px */
+            left: 0; /* Ensure the image is aligned to the left */
+            right: 0; /* Ensure the image covers the full width */
+            filter: grayscale(100%); /* Apply black and white effect */
+            
+        }
+
+        h3 {
+            color: white; /* Text color */
+            font-size: 30px; /* Font size */
+            position: absolute; /* Absolute positioning */
+            top: 50%; /* Center vertically */
+            left: 50%; /* Center horizontally */
+            transform: translate(-50%, -50%); /* Adjust for centering */
+            z-index: 10; /* Ensure the text appears above the image */
+        }
+
+
+        .social-icons {
+            display: flex; /* Align icons in a row */
+            gap: 15px; /* Space between icons */
+        }
+        
+        .social-icons a {
+            text-decoration: none; /* Remove underline */
+            color: #000; /* Default color of icons */
+            font-size: 24px; /* Size of icons */
+        }
+        
+        .social-icons a:hover {
+            color: #007bff; /* Change color on hover */
+        }
+        
+        
+        
+        
