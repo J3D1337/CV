@@ -16,17 +16,21 @@
 <body>
 
 <nav class="navbar navbar-expand-sm bg-dark navbar-dark">
-  <div class="container-fluid">
-    <ul class="navbar-nav">
-      <li class="nav-item">
-        <a class="nav-link active" href="#">Active</a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link" href="#">Link</a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link" href="#">Link</a>
-      </li>
+        <div class="container-fluid">
+            <ul class="navbar-nav">
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                        <?php
+                        if (isset($_SESSION['user']['email']) && isset($_SESSION['user']['email'])) {
+                            echo $_SESSION['user']['email'];
+                        } else {
+                            echo 'Guest';
+                        }
+                        ?>
+                    </a>
+                    <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                        <li><a class="dropdown-item" href="logout">Logout</a></li>
+                    </ul>
       </li>
     </ul>
   </div>
@@ -38,7 +42,7 @@
       <h2>About Me</h2>
       <h5>Photo of me:</h5>
       <!-- IMAGE -->
-      <div class="fakeimg">Fake Image</div>
+      <div class="fakeimg">David Image</div>
       <!-- IMAGE -->
       <p>Some text about me in culpa qui officia deserunt mollit anim..</p>
       <h3 class="mt-4">Some Links</h3>
