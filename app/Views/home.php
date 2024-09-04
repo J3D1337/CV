@@ -19,14 +19,7 @@
   <div class="container-fluid">
     <ul class="navbar-nav">
       <li class="nav-item">
-        <a class="nav-link active" href="#">Active</a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link" href="#">Link</a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link" href="#">Link</a>
-      </li>
+        <a class="nav-link active" href="home"><h3>David Kezele</h3></a>
       </li>
     </ul>
   </div>
@@ -35,42 +28,41 @@
 <div class="container mt-5">
   <div class="row">
     <div class="col-sm-4">
-      <h2>About Me</h2>
-      <h5>Photo of me:</h5>
+      <h2>BackEnd Developer</h2>
       <!-- IMAGE -->
-      <div class="fakeimg">Fake Image</div>
+      <div class="fakeimg">David Image</div>
       <!-- IMAGE -->
       <p>Some text about me in culpa qui officia deserunt mollit anim..</p>
-      <h3 class="mt-4">Some Links</h3>
-      <p>Lorem ipsum dolor sit ame.</p>
+      <h3 class="mt-4">Whant to know more?</h3>
+      <p>Let me tell you my:</p>
       <ul class="nav nav-pills flex-column">
         <li class="nav-item">
-          <a class="nav-link active" href="#">Active</a>
+          <a class="nav-link active" href="#">Story</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="#">Link</a>
+          <a class="nav-link" href="#">Skills</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="#">Link</a>
+          <a class="nav-link" href="#">Golas</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="#">Link</a>
+          <a class="nav-link" href="#">#</a>
         </li>
       </ul>
       <hr class="d-sm-none">
     </div>
     <div class="col-sm-8">
       <!-- INPUT -->
-      <h2>TITLE HEADING</h2>
-      <h5>Title description, Dec 7, 2020</h5>
+      <h2>Get To Know Me</h2>
+      <h5>Who's, What's and Why's</h5>
       <div class="fakeimg">Fake Image</div>
       <p>Some text..</p>
       <p>Sunt in culpa qui officia deserunt mollit anim id est laborum consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco.</p>
       <!-- INPUT -->
 
       <!-- INPUT -->
-      <h2 class="mt-5">TITLE HEADING</h2>
-      <h5>Title description, Sep 2, 2020</h5>
+      <h2 class="mt-5">Developer Journey</h2>
+      <h5>Coding... What's that?!</h5>
       <div class="fakeimg">Fake Image</div>
       <p>Some text..</p>
       <p>Sunt in culpa qui officia deserunt mollit anim id est laborum consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco.</p>
@@ -80,7 +72,8 @@
 </div>
 
 <div class="mt-5 p-4 bg-dark text-white text-center">
-  <p>Footer</p>
+  <p>David Kezele @RELENTLESS</p>
+  <p>Email: david.kezele@hotmail.com</p>
 </div>
 
 </body>
