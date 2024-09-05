@@ -2,6 +2,7 @@
 
 namespace App\Controllers;
 
+use App\Middlewares\Auth;
 use App\Models\User;
 
 class AuthController extends Controller
@@ -15,6 +16,7 @@ class AuthController extends Controller
 
     public function showRegister()
     {
+        Auth::isAuthenticated();
         return $this->render('/register');
     }
 
@@ -51,6 +53,7 @@ class AuthController extends Controller
 
     public function showLogin()
     {
+        Auth::isAuthenticated();
         return $this->render('login');
     }
 

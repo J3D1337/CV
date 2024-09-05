@@ -39,18 +39,38 @@ class Router
        $this->addRoute($path, $controller, $action, 'POST');
     }
 
+    private function matchRoute(string $path, string $method): ?array
+    {
+        foreach ($this->routes[$method] as $route => $routeData) {
+            $pattern = "#^" . preg_replace('/\{[^\/]+\}/', '([^/]+)', $route) . "$#";
+            if (preg_match($pattern, $path, $matches)) {
+                array_shift($matches); // Remove the full match
+                return [$routeData, $matches];
+            }
+        }
+        return null;
+    }
+
     public function dispatch(): void
     {
         $path = strtok($_SERVER['REQUEST_URI'], '?');
         $method = $_SERVER['REQUEST_METHOD'];
         
+        $route = $this->matchRoute($path, $method);
+        if ($route) {
+            [$routeData, $params] = $route;
+            $controller = $routeData['controller'];
+            $action = $routeData['action'];
 
-        if (isset($this->routes[$method][$path])) {
-            $controller = $this->routes[$method][$path]['controller'];
-            $action = $this->routes[$method][$path]['action'];
-
+            // Create controller instance
             $controllerInstance = new $controller();
-            $controllerInstance->$action();
+            
+            // Call action with parameters if available
+            if (method_exists($controllerInstance, $action)) {
+                call_user_func_array([$controllerInstance, $action], $params);
+            } else {
+                throw new Exception('Action not found');
+            }
         } else {
             throw new Exception('404 - Not Found');
         }

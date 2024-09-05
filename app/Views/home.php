@@ -11,6 +11,18 @@
       height: 200px;
       background: #aaa;
     }
+    .content {
+      min-height: calc(100vh - 56px - 70px); /* Adjust based on navbar and footer height */
+    }
+    .footer {
+      background: #343a40;
+      color: #fff;
+      padding: 20px;
+      text-align: center;
+      position: relative;
+      bottom: 0;
+      width: 100%;
+    }
   </style>
 </head>
 <body>
@@ -21,11 +33,16 @@
       <li class="nav-item">
         <a class="nav-link active" href="home"><h3>David Kezele</h3></a>
       </li>
+      <li class="nav-item">
+        <?php if (isset($_SESSION['user']) && $_SESSION['user']['is_admin'] == true): ?>
+          <a class="nav-link" href="UserHome">UserHome</a>
+        </li>
+        <?php endif; ?>
     </ul>
   </div>
 </nav>
 
-<div class="container mt-5">
+<div class="container content mt-5">
   <div class="row">
     <div class="col-sm-4">
       <h2>BackEnd Developer</h2>
@@ -33,7 +50,7 @@
       <div class="fakeimg">David Image</div>
       <!-- IMAGE -->
       <p>Some text about me in culpa qui officia deserunt mollit anim..</p>
-      <h3 class="mt-4">Whant to know more?</h3>
+      <h3 class="mt-4">Want to know more?</h3>
       <p>Let me tell you my:</p>
       <ul class="nav nav-pills flex-column">
         <li class="nav-item">
@@ -43,7 +60,7 @@
           <a class="nav-link" href="#">Skills</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="#">Golas</a>
+          <a class="nav-link" href="#">Goals</a>
         </li>
         <li class="nav-item">
           <a class="nav-link" href="#">#</a>
@@ -52,26 +69,15 @@
       <hr class="d-sm-none">
     </div>
     <div class="col-sm-8">
-      <!-- INPUT -->
-      <h2>Get To Know Me</h2>
-      <h5>Who's, What's and Why's</h5>
-      <div class="fakeimg">Fake Image</div>
-      <p>Some text..</p>
-      <p>Sunt in culpa qui officia deserunt mollit anim id est laborum consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco.</p>
-      <!-- INPUT -->
-
-      <!-- INPUT -->
-      <h2 class="mt-5">Developer Journey</h2>
-      <h5>Coding... What's that?!</h5>
-      <div class="fakeimg">Fake Image</div>
-      <p>Some text..</p>
-      <p>Sunt in culpa qui officia deserunt mollit anim id est laborum consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco.</p>
+      <?php foreach ($texts as $text): ?>
+        <<?= $text['type'] ?>><?= $text['text_name'] ?></<?= $text['type'] ?>>
+        <p><?= $text['content'] ?></p>
+      <?php endforeach; ?>
     </div>
-    <!-- INPUT -->
   </div>
 </div>
 
-<div class="mt-5 p-4 bg-dark text-white text-center">
+<div class="footer">
   <p>David Kezele @RELENTLESS</p>
   <p>Email: david.kezele@hotmail.com</p>
 </div>

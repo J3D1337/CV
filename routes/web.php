@@ -15,12 +15,15 @@ Route::get('/login', AuthController::class, 'showLogin');
 Route::post('/login', AuthController::class, 'login');
 Route::get('/logout', AuthController::class, 'logout');
 
-
 Route::get('/UserHome', UserController::class, 'index');
 Route::get('/home', HomeController::class, 'index');    
 Route::get('/goals', GoalsController::class, 'index');
 Route::get('/skills', SkillsController::class, 'index');
 
-
+// Corrected routes
+Route::post('/create', UserController::class, 'createText');
+Route::get('/edit/{id}', UserController::class, 'editText');
+Route::post('/update/{id}', UserController::class, 'updateText');
+Route::post('/delete/{id}', UserController::class, 'deleteText');
 
 Route::dispatch();
